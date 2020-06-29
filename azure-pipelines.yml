@@ -3,7 +3,7 @@
 # Add steps that install rails, analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 variables:
-- name: one
+- name: testone
   value: initialValue
 
 parameters:
@@ -23,9 +23,12 @@ steps:
     versionSpec: '>= 2.5'
 
 - script: |
-    gem install bundler
-    bundle install --retry=3 --jobs=4
-  displayName: 'bundle install'
+    echo $(testone)
+    echo $(yesno)
+    echo ${{ variables.testone }} $[variables.testone] $[variables.testtwo]
+    echo $(testtwo) 
+    
+  displayName: 'print variables'
 
 - script: bundle exec rake
   displayName: 'bundle exec rake'
