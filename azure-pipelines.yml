@@ -2,16 +2,6 @@
 # Package your Ruby project.
 # Add steps that install rails, analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
-variables:
-- name: testone
-  readonly: false
-  value: initialValue
-
-parameters:
-  - name: yesno
-    type: boolean
-    default: true
-
 trigger:
 - master
 
@@ -24,11 +14,9 @@ steps:
     versionSpec: '>= 2.5'
 
 - script: |
-    echo $(testone)
-    echo $(yesno)
-    echo ${{ variables.testone }} $[variables.testone] $[variables.testtwo]
-    echo $(testtwo) 
-    
+    echo $(var1) printed 1
+    echo $(var2) printed 2
+    echo $(var3) printed 3
   displayName: 'print variables'
 
 - script: bundle exec rake
