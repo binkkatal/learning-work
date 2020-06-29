@@ -5,6 +5,12 @@
 variables:
 - name: one
   value: initialValue
+
+parameters:
+  - name: yesno
+    type: boolean
+    default: true
+
 trigger:
 - master
 
